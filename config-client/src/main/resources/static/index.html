@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config Client with H2 Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Config Client with H2 Database</h1>
+
+    <div class="card">
+        <h2>API Endpoints</h2>
+        <ul>
+            <li><a href="/config" target="_blank">/config</a> - Basic application configuration</li>
+            <li><a href="/db-config" target="_blank">/db-config</a> - Database configuration</li>
+            <li><a href="/users" target="_blank">/users</a> - User data and H2 console information</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>H2 Database Console</h2>
+        <p>Access the H2 database console directly:</p>
+        <div class="highlight">
+            <a href="/h2-console" target="_blank">Open H2 Console</a>
+        </div>
+        <p>When connecting to the H2 console, use these settings:</p>
+        <ul>
+            <li><strong>JDBC URL:</strong> jdbc:h2:mem:devdb</li>
+            <li><strong>Username:</strong> sa</li>
+            <li><strong>Password:</strong> (leave empty)</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Spring Cloud Config</h2>
+        <p>이 애플리케이션은 H2 데이터베이스와 함께 Spring Cloud Config를 사용하는 방법을 보여줍니다.</p>
+        <p>데이터베이스 구성은 Config Server에서 검색되어 H2 데이터베이스에 연결하는 데 사용됩니다.</p>
+    </div>
+</body>
+</html>
