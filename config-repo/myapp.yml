@@ -1,0 +1,32 @@
+# Application-specific configuration for "myapp"
+
+# Application identification
+spring:
+  application:
+    name: myapp
+application:
+  description: My Sample Application
+
+# Application-specific database configuration
+myapp:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myapp_db
+    username: myapp_user
+    password: myapp_pass
+  
+  # Application-specific features
+  feature:
+    x:
+      enabled: true
+    y:
+      enabled: false
+  
+  # Application-specific endpoints
+  api:
+    base-url: http://api.example.com
+    timeout: 5000
+  
+  # Application-specific security settings
+  security:
+    token-validity-seconds: 3600
+    allowed-origins: http://localhost:3000,https://example.com

@@ -1,28 +1,24 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.5.3'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '3.5.3' apply false
+    id 'io.spring.dependency-management' version '1.1.7' apply false
 }
 
+// 이 프로젝트는 하위 프로젝트를 포함하는 상위 프로젝트
+//각 하위 프로젝트는 독립적으로 빌드되며, 상위 프로젝트는 공통 설정만 포함
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
 
 repositories {
     mavenCentral()
 }
 
+// Root project doesn't need any dependencies as each module is independent
+// 루트 프로젝트는 각 모듈이 독립적이기 때문에 종속성이 필요하지 않음.
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // No dependencies needed for the root project
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+jar {
+    enabled = true
 }

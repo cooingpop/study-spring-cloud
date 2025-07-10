@@ -1,1 +1,4 @@
 rootProject.name = 'study-spring-cloud'
+
+include 'config-server'
+include 'config-client'

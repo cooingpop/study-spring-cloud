@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: config-client
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      fail-fast: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+
+logging:
+  level:
+    sun.rmi.transport.tcp: ERROR
+    sun.rmi.loader: ERROR
+    javax.management.remote.rmi: ERROR

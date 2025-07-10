@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+#        native:
+#          search-locations: file:///${user.dir}/config-repo # 설정 파일을 읽어올 디렉토리 경로
+        git:
+          default-label: main  # 또는 실제 사용 중인 브랜치 이름
+          uri: https://github.com/cooingpop/study-spring-cloud.git # 설정 파일을 읽어올 Git 저장소의 URI
+          # clone-on-start: true # 기본값이 true이므로 명시적으로 설정하지 않아도 됨
+          # force-pull: false # 기본값이 false. true로 설정하면 매번 풀(pull)을 강제합니다.
+          # 일반적으로는 /actuator/refresh 또는 웹훅을 사용하는 것이 더 효율적입니다
+  profiles:
+    active: default # git 방식을 사용하기 위해 native 프로필을 비활성화,
+   # active: native #  위에 파일 형태로 하는 경우 native 프로필로 변경하고, server.native.search-locations 주석 해제
+server:
+  port: 8888
