@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    // Spring Data JPA will automatically implement basic CRUD operations
-    // We can add custom query methods if needed
+    // Spring Data JPA는 기본 CRUD 작업을 자동으로 구현합니다
+    // 필요한 경우 사용자 정의 쿼리 메서드를 추가할 수 있습니다
 }

@@ -13,12 +13,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String username;
-    
+
     private String email;
 
-    // Default constructor required by JPA
+    // JPA에서 필요한 기본 생성자
     public User() {
     }
 

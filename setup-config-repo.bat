@@ -11,19 +11,12 @@ copy "%~dp0src\main\resources\sample-config\application-dev.yml" "%~dp0config-re
 copy "%~dp0src\main\resources\sample-config\myapp.yml" "%~dp0config-repo\"
 copy "%~dp0src\main\resources\sample-config\myapp-prod.yml" "%~dp0config-repo\"
 
-REM Initialize Git repository if not already initialized
+REM Initialize Git repository for config-repo
 cd "%~dp0config-repo"
-if not exist .git (
-    echo Initializing Git repository...
-    git init
-    git config user.email "cooingpop@gmail.com"
-    git config user.name "cooingpop"
-)
-
-REM Add and commit files
-echo Adding files to Git repository...
+git init
 git add .
-git commit -m "Initial configuration setup"
+git commit -m "Initial commit of configuration files"
+cd "%~dp0"
 
 echo.
 echo Config Repository setup complete!
