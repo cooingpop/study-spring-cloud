@@ -1,0 +1,11 @@
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+}
+
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}

@@ -1,0 +1,38 @@
+# Production environment configuration for "myapp"
+
+# Override application-specific settings for production
+application:
+  description: My Sample Application (Production)
+
+# Production database configuration
+myapp:
+  datasource:
+    url: jdbc:mysql://prod-db-server:3306/myapp_prod
+    username: prod_user
+    password: prod_secure_password
+
+  # Production feature flags
+  feature:
+    x:
+      enabled: true
+    y:
+      enabled: true
+
+  # Production endpoints
+  api:
+    base-url: https://api.example.com
+    timeout: 3000
+
+  # Production security settings
+  security:
+    token-validity-seconds: 1800
+    allowed-origins: https://example.com
+
+  # Production-specific settings
+  cache:
+    enabled: true
+    ttl: 3600
+  metrics:
+    enabled: true
+  monitoring:
+    enabled: true
